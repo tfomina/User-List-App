@@ -9,6 +9,9 @@ module.exports = {
   entry: path.resolve(__dirname, "src/index.tsx"),
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      components: path.resolve(__dirname, "src/components/"),
+    },
   },
   output: {
     path: path.resolve(__dirname, "dist"),
