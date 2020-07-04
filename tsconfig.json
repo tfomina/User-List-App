@@ -14,9 +14,16 @@
     "esModuleInterop": true,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"]
+      "components/*": ["src/components/*"],
+      "constants/*": ["src/constants/*"],
+      "actions/*": ["src/actions/*"],
+      "reducers": ["src/reducers/index.ts"],
+      "sagas": ["src/sagas/index.ts"],
+      "sagas/*": ["src/sagas/*"],
+      "types/*": ["src/types/*"],
+      "api/*": ["src/api/*"]
     }
   }
 }
