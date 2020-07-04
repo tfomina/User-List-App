@@ -8,7 +8,7 @@ function* getUsers() {
     const result = yield call(api.getUsers);
     yield put(
       actions.getUsersSuccess({
-        items: result.data.data,
+        items: result.data.data || [],
       })
     );
   } catch (e) {}
