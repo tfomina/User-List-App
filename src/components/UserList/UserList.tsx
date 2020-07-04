@@ -6,7 +6,7 @@ type Props = {
   users: User[];
 };
 
-export const List: React.FC<Props> = (props) => {
+export const UserList: React.FC<Props> = (props) => {
   const { users } = props;
 
   return (

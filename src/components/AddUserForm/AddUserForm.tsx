@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Form as LibForm, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 type Props = {
   onSubmit: (firstName: string, lastName: string) => void;
 };
 
-export const Form: React.FC<Props> = (props) => {
+export const AddUserForm: React.FC<Props> = React.memo((props) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
 
@@ -26,7 +26,7 @@ export const Form: React.FC<Props> = (props) => {
   };
 
   return (
-    <LibForm onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label>First Name</Label>
         <Input
@@ -52,6 +52,6 @@ export const Form: React.FC<Props> = (props) => {
           Create
         </Button>
       </FormGroup>
-    </LibForm>
+    </Form>
   );
-};
+});
