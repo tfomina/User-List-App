@@ -23,7 +23,8 @@
       "sagas": ["src/sagas/index.ts"],
       "sagas/*": ["src/sagas/*"],
       "types/*": ["src/types/*"],
-      "api/*": ["src/api/*"]
+      "api/*": ["src/api/*"],
+      "selectors/*": ["src/selectors/*"]
     }
   }
 }
