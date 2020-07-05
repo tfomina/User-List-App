@@ -3,10 +3,12 @@ import {
   GET_USERS_SUCCESS,
   CREATE_USER_REQUEST,
   DELETE_USER_REQUEST,
+  HANDLE_ERROR,
 } from "constants/users";
 
 type UsersState = {
   items: User[];
+  error: string;
 };
 
 type GetUsersSuccessAction = {
@@ -29,10 +31,18 @@ export type DeleteUserRequestAction = {
   };
 };
 
-type Action = GetUsersSuccessAction;
+type HandleErrorAction = {
+  type: typeof HANDLE_ERROR;
+  payload: {
+    error: string;
+  };
+};
+
+type Action = GetUsersSuccessAction | HandleErrorAction;
 
 const INITIAL_STATE = {
   items: [],
+  error: "",
 };
 
 export const usersReducer = (
@@ -42,7 +52,15 @@ export const usersReducer = (
   switch (action.type) {
     case GET_USERS_SUCCESS: {
       return {
+        ...state,
         items: (action as GetUsersSuccessAction).payload.items,
+        error: "",
+      };
+    }
+    case HANDLE_ERROR: {
+      return {
+        ...state,
+        error: (action as HandleErrorAction).payload.error,
       };
     }
     default: {

@@ -19,7 +19,13 @@ function* getUsersHandler() {
         items: result.data.data || [],
       })
     );
-  } catch (e) {}
+  } catch (e) {
+    yield put(
+      actions.handleError({
+        error: "An error occured when trying to get the users",
+      })
+    );
+  }
 }
 
 function* watchGetUsers() {
@@ -31,7 +37,13 @@ function* createUserHandler(action: CreateUserRequestAction) {
   try {
     yield call(api.createUser, { firstName, lastName });
     yield call(getUsersHandler);
-  } catch (e) {}
+  } catch (e) {
+    yield put(
+      actions.handleError({
+        error: "An error occured when trying to create the user",
+      })
+    );
+  }
 }
 
 function* watchCreateUser() {
@@ -42,7 +54,13 @@ function* deleteUserHandler({ userId }: { userId: number }) {
   try {
     yield call(api.deleteUser, userId);
     yield call(getUsersHandler);
-  } catch (e) {}
+  } catch (e) {
+    yield put(
+      actions.handleError({
+        error: "An error occured when trying to delete the user",
+      })
+    );
+  }
 }
 
 function* watchDeleteUser() {
