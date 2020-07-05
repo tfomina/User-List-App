@@ -7,3 +7,16 @@ export const getUsers = () => {
     },
   });
 };
+
+export const createUser = ({
+  firstName,
+  lastName,
+}: {
+  firstName: string;
+  lastName: string;
+}) => {
+  return axiosInstance.post("/users", {
+    firstName,
+    lastName,
+  });
+};

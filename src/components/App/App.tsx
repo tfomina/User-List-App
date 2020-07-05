@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getUsersRequest } from "actions/users";
+import { getUsersRequest, createUserRequest } from "actions/users";
 import { useTypedSelector } from "src/useTypedSelector";
 import { UserList } from "components/UserList";
 import { AddUserForm } from "components/AddUserForm";
@@ -15,8 +15,7 @@ export const App: React.FC = () => {
   }, []);
 
   const handleSubmit = (firstName: string, lastName: string) => {
-    console.log("firstName ", firstName);
-    console.log("lastName ", lastName);
+    dispatch(createUserRequest({ firstName, lastName }));
   };
 
   return (
