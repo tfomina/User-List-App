@@ -20,3 +20,7 @@ export const createUser = ({
     lastName,
   });
 };
+
+export const deleteUser = (userId: number) => {
+  return axiosInstance.delete(`/users/${userId}`);
+};

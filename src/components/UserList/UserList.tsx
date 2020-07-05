@@ -4,10 +4,11 @@ import { User } from "types/users";
 
 type Props = {
   users: User[];
+  onDeleteUser: (userId: number) => void;
 };
 
 export const UserList: React.FC<Props> = (props) => {
-  const { users } = props;
+  const { users, onDeleteUser } = props;
 
   return (
     <ListGroup>
@@ -32,7 +33,11 @@ export const UserList: React.FC<Props> = (props) => {
                 {`${user.firstName} ${user.lastName}`}
               </div>
               <div>
-                <Button outline color="danger">
+                <Button
+                  outline
+                  color="danger"
+                  onClick={() => onDeleteUser(user.id)}
+                >
                   Delete
                 </Button>
               </div>

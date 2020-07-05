@@ -1,5 +1,9 @@
 import { User } from "types/users";
-import { GET_USERS_SUCCESS, CREATE_USER_REQUEST } from "constants/users";
+import {
+  GET_USERS_SUCCESS,
+  CREATE_USER_REQUEST,
+  DELETE_USER_REQUEST,
+} from "constants/users";
 
 type UsersState = {
   items: User[];
@@ -15,6 +19,13 @@ export type CreateUserRequestAction = {
   payload: {
     firstName: string;
     lastName: string;
+  };
+};
+
+export type DeleteUserRequestAction = {
+  type: typeof DELETE_USER_REQUEST;
+  payload: {
+    userId: string;
   };
 };
 

@@ -3,6 +3,7 @@ import {
   GET_USERS_SUCCESS,
   GET_USERS_REQUEST,
   CREATE_USER_REQUEST,
+  DELETE_USER_REQUEST,
 } from "constants/users";
 
 export const getUsersRequest = () => ({
@@ -19,5 +20,10 @@ export const createUserRequest = (payload: {
   lastName: string;
 }) => ({
   type: CREATE_USER_REQUEST,
+  payload,
+});
+
+export const deleteUserRequest = (payload: { userId: number }) => ({
+  type: DELETE_USER_REQUEST,
   payload,
 });
