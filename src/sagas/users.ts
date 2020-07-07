@@ -9,7 +9,7 @@ import {
 import * as actions from "actions/users";
 import * as constants from "constants/users";
 import * as api from "api/users";
-import { CreateUserRequestAction } from "src/reducers/users";
+import { CreateUserRequestAction } from "reducers/users";
 
 function* getUsersHandler() {
   try {

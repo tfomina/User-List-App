@@ -17,14 +17,15 @@
     "baseUrl": ".",
     "paths": {
       "components/*": ["src/components/*"],
-      "constants/*": ["src/constants/*"],
-      "actions/*": ["src/actions/*"],
-      "reducers": ["src/reducers/index.ts"],
+      "constants/*": ["src/redux/constants/*"],
+      "actions/*": ["src/redux/actions/*"],
+      "reducers": ["src/redux/reducers/index.ts"],
+      "reducers/*": ["src/redux/reducers/*"],
       "sagas": ["src/sagas/index.ts"],
       "sagas/*": ["src/sagas/*"],
       "types/*": ["src/types/*"],
       "api/*": ["src/api/*"],
-      "selectors/*": ["src/selectors/*"]
+      "selectors/*": ["src/redux/selectors/*"]
     }
   }
 }
