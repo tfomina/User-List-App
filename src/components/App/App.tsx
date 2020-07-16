@@ -6,16 +6,20 @@ import {
   deleteUserRequest,
   handleError,
 } from "actions/users";
-import { usersSelector, errorSelector } from "selectors/users";
+import {
+  items as usersSelector,
+  error as errorSelector,
+} from "selectors/users";
 import { UserList } from "components/UserList";
 import { AddUserForm } from "components/AddUserForm";
 import { Error } from "components/Error";
+import { useTypedSelector } from "src/useTypedSelector";
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  const users = usersSelector();
-  const error = errorSelector();
+  const users = useTypedSelector(usersSelector);
+  const error = useTypedSelector(errorSelector);
 
   useEffect(() => {
     dispatch(getUsersRequest());

@@ -1,7 +1,9 @@
-import { useTypedSelector } from "src/useTypedSelector";
+import { CombinedState } from "redux";
+import { UsersState } from "reducers/users";
 
-export const usersSelector = () =>
-  useTypedSelector((state) => state.users.items);
-
-export const errorSelector = () =>
-  useTypedSelector((state) => state.users.error);
+export const users = (state: CombinedState<{ users: UsersState }>) =>
+  state.users;
+export const items = (state: CombinedState<{ users: UsersState }>) =>
+  users(state).items;
+export const error = (state: CombinedState<{ users: UsersState }>) =>
+  users(state).error;

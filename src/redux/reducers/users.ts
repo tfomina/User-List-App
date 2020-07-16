@@ -6,7 +6,7 @@ import {
   HANDLE_ERROR,
 } from "constants/users";
 
-type UsersState = {
+export type UsersState = {
   items: User[];
   error: string;
 };
