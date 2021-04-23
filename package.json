@@ -1,11 +1,11 @@
 {
-  "name": "User-List-App",
+  "name": "user-list-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open --hot --progress --colors",
+    "dev": "webpack-dev-server --mode development --open --hot --progress --colors",
     "build": "webpack --mode production"
   },
   "repository": {
