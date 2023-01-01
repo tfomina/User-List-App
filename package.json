@@ -21,12 +21,12 @@
   "homepage": "https://github.com/tfomina/User-List-App#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "ts-loader": "^7.0.5",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.4.2",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.9.6",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
@@ -36,7 +36,7 @@
     "@types/reactstrap": "^8.4.3",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
-    "css-loader": "^3.6.0",
+    "css-loader": "^6.7.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
